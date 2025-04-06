@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  mywebapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "6001:8080"
+    command: >
+      dapr run --app-id my-web-api --app-port 6001 --dapr-http-port 3500 --dapr-grpc-port 50001 --resources-path ./components -- dotnet run --project ./MyWebApp.csproj
+    volumes:
+      - ${PWD}/components:/components
