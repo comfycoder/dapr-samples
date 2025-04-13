@@ -1,0 +1,6 @@
+@NL.DicomServer_HostAddress = http://localhost:5278
+
+GET {{NL.DicomServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
